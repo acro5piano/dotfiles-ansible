@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+  become: True
+  tasks:
+    - pacman:
+        name: php
+        state: present
+    - pacman:
+        name: composer
+        state: present
