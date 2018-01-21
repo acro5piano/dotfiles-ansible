@@ -1,1 +1,8 @@
-- include: php.yml
+- hosts: client
+  become: yes
+  tasks:
+    - name: update apt cache
+      apt:
+        cache_valid_time: 3600
+        update_cache: yes
+- include: apt.yml

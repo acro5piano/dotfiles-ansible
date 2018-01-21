@@ -4,7 +4,7 @@ Provision my PC
 # Set up
 
 ```
-sudo pacman -S ansible
+sudo apt install ansible
 sudo systemctl start ssh
 ```
 
@@ -15,4 +15,3 @@ Just run them:
 ```
 ansible-playbook playbooks/main.yml
 ```
-

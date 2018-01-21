@@ -1,0 +1,40 @@
+- hosts: client
+  become: yes
+  tasks:
+    - name: install basic applications with apt
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - bc
+        - curl
+        - g++
+        - gcc
+        - git
+        - jq
+        - make
+        - man
+        - net-tools
+        - python-software-properties
+        - software-properties-common
+        - ssh
+        - tmux
+        - tree
+        - xclip
+        - awscli
+        - pm-utils
+        - acpi
+        - docker-compose
+        - xbacklight
+        - mariadb-client
+        - php
+        - php-curl
+        - php-mbstring
+        - php-xml
+        - php-gd
+        - composer
+
+    - name: ensure unused packages absent
+      apt:
+        name: ruby
+        state: absent
